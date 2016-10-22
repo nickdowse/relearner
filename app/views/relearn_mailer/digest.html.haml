@@ -1,11 +1,11 @@
 %h1 Hey thurrr,
 
-%p Here's your relean digest for the week
+%p Here's what you should be re-learning today!
 
-- @items.each do |item|
+- @relearnables.each do |relearnable|
 
   %p
-    %strong= item.title
+    %strong= relearnable.title
 
-  %p= item.reference
-  %p= item.summary
+  %p= link_to relearnable.reference, relearnable.reference
+  %p= relearnable.summary

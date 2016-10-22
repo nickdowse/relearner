@@ -1,6 +1,8 @@
 # encoding: UTF-8
 class RelearnMailer < ActionMailer::Base
 
+  default from: "relearnable_digest@nickdowse.co.nz"
+
   def digest(user, relearnables)
     @user = user
     @relearnables = relearnables
