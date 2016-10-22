@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022145542) do
+ActiveRecord::Schema.define(version: 20161022153358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,17 @@ ActiveRecord::Schema.define(version: 20161022145542) do
     t.string   "reference"
     t.text     "summary"
     t.integer  "user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.datetime "last_relearnt"
     t.integer  "number_times_relearnt"
     t.string   "title"
+    t.integer  "easiness_factor"
+    t.integer  "number_repetitions"
+    t.integer  "quality_of_last_recall"
+    t.integer  "repetition_interval"
+    t.datetime "next_repetition"
+    t.datetime "last_studied"
   end
 
   create_table "users", force: :cascade do |t|

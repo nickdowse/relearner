@@ -7,18 +7,26 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+
+# Spaced Repetition Algorithm
+
+gem 'tworgy-spaced-repetition', git: 'git://github.com/nickdowse/tworgy-spaced-repetition'
+
 group :development, :test do
   gem 'byebug'
 end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
 gem 'devise'
 gem 'foundation-rails', '~> 5.5'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -33,14 +41,17 @@ group :development do
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
+
 group :production do
   gem 'rails_12factor'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
