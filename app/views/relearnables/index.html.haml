@@ -1,0 +1,28 @@
+%h1 Listing relearnables
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Reference
+      %th Summary
+      %th Last Seen
+      %th Times Relearnt
+      %th
+      %th
+
+  %tbody
+    - @relearnables.each do |relearnable|
+      %tr
+        %td= link_to relearnable.title, relearnable.reference, target: "_blank"
+        %td= link_to relearnable.reference, relearnable.reference, target: "_blank"
+        %td= relearnable.summary
+        %td= relearnable.last_relearnt
+        %td= relearnable.number_times_relearnt
+
+        %td= link_to 'Show', relearnable
+        %td= link_to 'Destroy', relearnable, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Relearnable', new_relearnable_path

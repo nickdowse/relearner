@@ -1,0 +1,1 @@
+json.array! @relearnables, partial: 'relearnables/relearnable', as: :relearnable

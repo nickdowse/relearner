@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Reference:
+  = @relearnable.reference
+%p
+  %b Summary:
+  = @relearnable.summary
+
+%p
+  %b Last seen:
+  = @relearnable.last_relearnt
+
+%p
+  %b Number of times seen:
+  = @relearnable.number_times_relearnt
+
+= link_to 'Edit', edit_relearnable_path(@relearnable)
+\|
+= link_to 'Back', relearnables_path

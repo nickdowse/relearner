@@ -1,0 +1,1 @@
+json.partial! "relearnables/relearnable", relearnable: @relearnable

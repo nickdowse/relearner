@@ -1,0 +1,11 @@
+%h1 Hey thurrr,
+
+%p Here's your relean digest for the week
+
+- @items.each do |item|
+
+  %p
+    %strong= item.title
+
+  %p= item.reference
+  %p= item.summary

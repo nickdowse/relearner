@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  resources :relearnables
+  root to: 'relearnables#index'
   devise_for :users
   resources :users
 end
