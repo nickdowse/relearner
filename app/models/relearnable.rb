@@ -7,7 +7,6 @@ class Relearnable < ActiveRecord::Base
   before_create :reset_spaced_repetition_fields # included by the SRS gem
 
   def reset_spaced_repetition_fields
-    puts "Here!"
     self.easiness_factor = 2.5
     self.number_repetitions = 0
     self.next_repetition = Date.today

@@ -9,11 +9,11 @@
 
 %p
   %b Last seen:
-  = @relearnable.last_relearnt
+  = @relearnable.last_studied
 
 %p
   %b Number of times seen:
-  = @relearnable.number_times_relearnt
+  = @relearnable.number_repetitions
 
 = link_to 'Edit', edit_relearnable_path(@relearnable)
 \|

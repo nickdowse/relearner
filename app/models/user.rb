@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
     items = relearnables
 
     RelearnMailer.digest(self, items).deliver_now
+    items.each do |item|
+      item.process_recall_result(4)
+    end
   end
 end
 

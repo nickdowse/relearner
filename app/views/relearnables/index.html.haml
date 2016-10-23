@@ -17,8 +17,8 @@
         %td= link_to relearnable.title, relearnable.reference, target: "_blank"
         %td= link_to relearnable.reference, relearnable.reference, target: "_blank"
         %td= relearnable.summary
-        %td= relearnable.last_relearnt
-        %td= relearnable.number_times_relearnt
+        %td= relearnable.last_studied
+        %td= relearnable.number_repetitions
 
         %td= link_to 'Show', relearnable
         %td= link_to 'Destroy', relearnable, :method => :delete, :data => { :confirm => 'Are you sure?' }
