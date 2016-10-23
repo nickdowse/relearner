@@ -8,9 +8,9 @@
 
   .field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, value: @relearnable.title || params[:title]
   .field
     = f.label :reference
-    = f.text_field :reference
+    = f.text_field :reference, value: @relearnable.reference || params[:url]
   .actions
     = f.submit 'Save'

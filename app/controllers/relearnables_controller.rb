@@ -1,5 +1,5 @@
 class RelearnablesController < ApplicationController
-  before_action :set_relearnable, only: [:show, :edit, :update, :destroy]
+  before_action :set_relearnable, only: [:show, :edit, :update, :destroy, :after_create]
   before_action :redirect_if_logged_out
   # GET /relearnables
   # GET /relearnables.json
@@ -24,9 +24,8 @@ class RelearnablesController < ApplicationController
   # POST /relearnables
   # POST /relearnables.json
   def create
-    @relearnable = Relearnable.new(relearnable_params)
+    @relearnable = current_user.relearnables.new(relearnable_params)
 
-    @relearnable.user_id = current_user.id
     @relearnable.summary = "Test summary"
 
     respond_to do |format|

@@ -1,4 +1,4 @@
-- @empty_container = params[:extension].present?
+- @empty_container = params[:from_extension].present?
 
 %div{class: "#{@empty_container ? '' : 'authform'}"}
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -19,5 +19,6 @@
       %br
       = f.password_field :password_confirmation, autocomplete: "off"
 
+    = f.hidden_field :redirect_to_new, value: params[:from_extension].present?
     .actions
       = f.submit "Sign up"
