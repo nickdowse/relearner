@@ -1,0 +1,8 @@
+Hey thurrr,
+
+Here's what you should be re-learning today!
+
+<%= @relearnables.each do |relearnable| %>
+  <%= relearnable.title %>
+  <%= link_to relearnable.reference, relearnable.reference %>
+  <%= relearnable.summary %>

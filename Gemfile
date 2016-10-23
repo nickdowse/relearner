@@ -26,6 +26,7 @@ gem 'foundation-rails', '~> 5.5'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
+gem 'mailgunner'
 
 group :development do
   gem 'better_errors'

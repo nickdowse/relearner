@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   def send_digest
     items = relearnables.to_relearn_today
 
-    return if items.count == 0
+    # return if items.count == 0
 
     RelearnMailer.digest(self, items).deliver_now
     items.each do |item|
