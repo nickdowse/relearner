@@ -8,6 +8,8 @@ class Relearnable < ActiveRecord::Base
 
   before_create :reset_spaced_repetition_fields # included by the SRS gem
 
+  validates_uniqueness_of :reference, :scope => [:user_id]
+
   def reset_spaced_repetition_fields
     self.easiness_factor = 2.5
     self.number_repetitions = 0
