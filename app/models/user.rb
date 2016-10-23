@@ -8,8 +8,16 @@ class User < ActiveRecord::Base
 
   has_many :relearnables
 
+  def self.send_user_digests
+    User.all.each do |u|
+      u.send_digest
+    end
+  end
+
   def send_digest
-    items = relearnables
+    items = relearnables.to_relearn_today
+
+    return if items.count == 0
 
     RelearnMailer.digest(self, items).deliver_now
     items.each do |item|
