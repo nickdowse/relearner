@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+  def allow_iframe
+    response.headers.delete "X-Frame-Options"
+  end
+
 end

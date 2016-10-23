@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  after_action :allow_iframe, only: [:new, :create]
+
   protected
 
   def after_sign_up_path_for(resource)

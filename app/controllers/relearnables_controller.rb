@@ -1,6 +1,8 @@
 class RelearnablesController < ApplicationController
   before_action :set_relearnable, only: [:show, :edit, :update, :destroy, :after_create]
   before_action :redirect_if_logged_out
+  after_action  :allow_iframe, only: [:show, :new, :create]
+
   # GET /relearnables
   # GET /relearnables.json
   def index
