@@ -4,7 +4,7 @@ class Relearnable < ActiveRecord::Base
 
   belongs_to :user
 
-  scope :to_relearn_today, -> { where("next_repetition >= ? AND next_repetition <= ?", Date.today.beginning_of_day, Date.today.end_of_day)}
+  scope :to_relearn_today, -> { where("next_repetition <= ?", Date.today.end_of_day)}
 
   before_create :reset_spaced_repetition_fields # included by the SRS gem
 
