@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
     RelearnMailer.digest(self, items).deliver_now
     items.each do |item|
       item.process_recall_result(4)
+      item.save
     end
   end
 end
