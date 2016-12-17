@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def send_digest
-    items = relearnables.to_relearn_today
+    items = relearnables.to_relearn_today.limit(3)
 
     return if items.count == 0
 
