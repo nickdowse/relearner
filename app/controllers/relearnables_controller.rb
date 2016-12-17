@@ -26,17 +26,15 @@ class RelearnablesController < ApplicationController
   # POST /relearnables
   # POST /relearnables.json
   def create
-    @relearnable = current_user.relearnables.new(relearnable_params)
-
-    @relearnable.summary = "Test summary"
+    relearnable = current_user.relearnables.new(relearnable_params)
 
     respond_to do |format|
-      if @relearnable.save
-        format.html { redirect_to @relearnable, notice: 'Relearnable was successfully created.' }
-        format.json { render :show, status: :created, location: @relearnable }
+      if relearnable.save
+        format.html { redirect_to relearnable, notice: 'Relearnable was successfully created.' }
+        format.json { render :show, status: :created, location: relearnable }
       else
         format.html { render :new }
-        format.json { render json: @relearnable.errors, status: :unprocessable_entity }
+        format.json { render json: relearnable.errors, status: :unprocessable_entity }
       end
     end
   end

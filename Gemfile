@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 # Spaced Repetition Algorithm
 
 gem 'tworgy-spaced-repetition', git: 'git://github.com/nickdowse/tworgy-spaced-repetition'
+gem 'Smmry-Summary', '~> 0.1.2'
 
 group :development, :test do
   gem 'byebug'

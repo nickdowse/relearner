@@ -7,6 +7,7 @@ class Relearnable < ActiveRecord::Base
   scope :to_relearn_today, -> { where("next_repetition <= ?", Date.today.end_of_day)}
 
   before_create :reset_spaced_repetition_fields # included by the SRS gem
+  after_create  :set_summary
 
   validates_uniqueness_of :reference, :scope => [:user_id]
 
@@ -16,4 +17,8 @@ class Relearnable < ActiveRecord::Base
     self.next_repetition = Date.today
   end
 
+  def set_summary
+    result = Smmrize.webpage({url: self.reference, length: 3})["sm_api_content"]
+    self.update_attribute(:summary, result)
+  end
 end
