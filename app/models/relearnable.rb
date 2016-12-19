@@ -18,7 +18,7 @@ class Relearnable < ActiveRecord::Base
   end
 
   def set_summary
-    result = Smmrize.webpage({url: self.reference, length: 3})["sm_api_content"]
+    result = Smmrize.webpage({url: self.reference, length: 5})["sm_api_content"]
     self.update_attribute(:summary, result)
   end
 end
