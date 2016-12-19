@@ -8,9 +8,9 @@
 
   .field
     = f.label :title
-    = f.text_field :title, value: @relearnable.title || params[:title]
+    = f.text_field :title, value: @relearnable.title || params[:title], placeholder: "Learning how to learn - relearning using a spaced repetition algorithm"
   .field
     = f.label :reference
-    = f.text_field :reference, value: @relearnable.reference || params[:url]
+    = f.text_field :reference, value: @relearnable.reference || params[:url], placeholder: "https://blog.relearner.heroku.com/"
   .actions
     = f.submit 'Save'

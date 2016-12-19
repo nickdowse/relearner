@@ -33,6 +33,7 @@ class RelearnablesController < ApplicationController
         format.html { redirect_to relearnable, notice: 'Relearnable was successfully created.' }
         format.json { render :show, status: :created, location: relearnable }
       else
+        @relearnable = relearnable
         format.html { render :new }
         format.json { render json: relearnable.errors, status: :unprocessable_entity }
       end

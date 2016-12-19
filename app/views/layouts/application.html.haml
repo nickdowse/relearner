@@ -9,7 +9,7 @@
     = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
-  %body
+  %body{class: "#{controller_name}_#{action_name}"}
     - unless @empty_container
       %header
         = render 'layouts/navigation'
