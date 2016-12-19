@@ -7,6 +7,7 @@
       %th Reference
       %th Summary
       %th Last Seen
+      %th Next Seen:
       %th Times Relearnt
       %th
       %th
@@ -16,12 +17,13 @@
       %tr
         %td= link_to relearnable.title, relearnable.reference, target: "_blank"
         %td= link_to relearnable.reference, relearnable.reference, target: "_blank"
-        %td= relearnable.summary
-        %td= relearnable.last_studied
+        %td= truncate(relearnable.summary, length: 50)
+        %td= relearnable.last_studied.strftime("%A, %B %Y")
+        %td= relearnable.next_repetition.strftime("%A, %B %Y")
         %td= relearnable.number_repetitions
 
         %td= link_to 'Show', relearnable
-        %td= link_to 'Destroy', relearnable, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Delete', relearnable, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
